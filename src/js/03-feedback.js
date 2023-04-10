@@ -1,6 +1,6 @@
 import throttle from 'lodash.throttle';
 
-form = document.querySelector('.feedback-form');
+const form = document.querySelector('.feedback-form');
 
 form.addEventListener('input', throttle(onInputData, 500));
 form.addEventListener('submit', onFormSubmit);
@@ -18,7 +18,7 @@ function reloadPage() {
   if (dataForm) {
     email.value = dataForm.email || '';
     message.value = dataForm.message || '';
-    
+
   }
 }
 
