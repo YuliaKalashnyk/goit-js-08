@@ -35,29 +35,6 @@ function createListGalery (galleryItems) {
       }).join('');
 };
 
-gallery.addEventListener('click', onImgClick);
-
-function onImgClick(evt) {
-    evt.preventDefault();
-
-    if (evt.target.nodeName !== 'IMG') {
-        return;
-    }
-
-    const modal = basicLightbox.create(`<img src="${evt.target.dataset.source}">`,
-        { onShow: () => window.addEventListener('keydown', onEscKeyPress),
-        onClose: () => window.removeEventListener('keydown', onEscKeyPress),
-        }
-    );
-    modal.show();
-
-    function onEscKeyPress(evt) {
-        if (evt.code === "Escape") {
-            modal.close();
-        }
-    }
-};
-
 new SimpleLightbox('.gallery a', {
     captions: true,
     captionsData: 'alt',
