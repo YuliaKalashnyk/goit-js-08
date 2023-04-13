@@ -24,7 +24,7 @@ function reloadPage() {
 
 function onFormSubmit(e) {
   e.preventDefault();
-  email.value = '';
-  message.value = '';
   console.log({ email: email.value, message: message.value });
+  form.reset();
+  localStorage.clear();
 }
